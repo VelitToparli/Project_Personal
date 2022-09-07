@@ -49,7 +49,7 @@ namespace Project_Personal.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditSkill()
+        public ActionResult EditExperience()
         {
             return View();
         }

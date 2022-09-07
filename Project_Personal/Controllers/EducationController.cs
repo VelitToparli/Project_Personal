@@ -7,50 +7,55 @@ using Project_Personal.Models;
 
 namespace Project_Personal.Controllers
 {
-    public class SkillController : Controller
+    public class EducationController : Controller
     {
+        // GET: Education
+
         PersonalDbEntities db = new PersonalDbEntities();
-        // GET: Skill
+
         public ActionResult Index()
         {
-            var values = db.TblSkill.ToList();
+            var values = db.TblEducation.ToList();
             return View(values);
         }
 
+
         [HttpGet]
 
-        public ActionResult AddSkill()
+        public ActionResult AddEducation()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSkill( TblSkill p)
+        public ActionResult AddEducation(TblEducation p)
         {
-            db.TblSkill.Add(p);
+            db.TblEducation.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteSkill(int id)
+        public ActionResult DeleteEducation(int id)
         {
-            var value = db.TblSkill.Where(x => x.SkillID == id).FirstOrDefault();
-            db.TblSkill.Remove(value);
+            var value = db.TblEducation.Where(x => x.EducationID == id).FirstOrDefault();
+            db.TblEducation.Remove(value);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult EditSkill(int id)
+        public ActionResult EditEducation(int id)
         {
-            var value = db.TblSkill.Where(x => x.SkillID == id).FirstOrDefault();
+            var value = db.TblEducation.Where(x => x.EducationID == id).FirstOrDefault();
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult EditSkill()
+        public ActionResult EditEducation()
         {
             return View();
         }
+
     }
+
 }

@@ -7,48 +7,50 @@ using Project_Personal.Models;
 
 namespace Project_Personal.Controllers
 {
-    public class SkillController : Controller
+    public class TestimonialController : Controller
     {
+        // GET: Testimonial
+
         PersonalDbEntities db = new PersonalDbEntities();
-        // GET: Skill
+
         public ActionResult Index()
         {
-            var values = db.TblSkill.ToList();
+            var values = db.TblTestimonial.ToList();
             return View(values);
         }
 
         [HttpGet]
 
-        public ActionResult AddSkill()
+        public ActionResult AddTestimonial()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSkill( TblSkill p)
+        public ActionResult AddTestimonial(TblTestimonial p)
         {
-            db.TblSkill.Add(p);
+            db.TblTestimonial.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteSkill(int id)
+        public ActionResult DeleteTestimonial(int id)
         {
-            var value = db.TblSkill.Where(x => x.SkillID == id).FirstOrDefault();
-            db.TblSkill.Remove(value);
+            var value = db.TblTestimonial.Where(x => x.TestimonialID == id).FirstOrDefault();
+            db.TblTestimonial.Remove(value);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult EditSkill(int id)
+        public ActionResult EditTestimonial(int id)
         {
-            var value = db.TblSkill.Where(x => x.SkillID == id).FirstOrDefault();
+            var value = db.TblTestimonial.Where(x => x.TestimonialID == id).FirstOrDefault();
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult EditSkill()
+        public ActionResult EditTestimonial()
         {
             return View();
         }

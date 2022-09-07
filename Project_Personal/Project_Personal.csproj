@@ -128,9 +128,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,9 +265,17 @@
     <Content Include="Tamplates\my_website-starter\assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Tamplates\my_website-starter\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Tamplates\my_website-starter\assets\fonts\FontAwesome.otf" />
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Education\AddEducation.cshtml" />
+    <Content Include="Views\Education\EditEducation.cshtml" />
+    <Content Include="Views\Experience\EditExperience.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\EditTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Feature\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
